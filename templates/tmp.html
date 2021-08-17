@@ -1,23 +1,31 @@
 {% include "main.html" %}
+  <div class="block"></div>
   <div class="container">
     <div class="columns">
-      <div class="column is-one-third">
-        <div class="dropdown">
-          <div class="dropdown-trigger">
-            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
-              <span>Drop down</span>
-              <span class="icon is-small">
-                <i class="fas fa-angle-down" aria-hidden="true"></i>
-              </span>
-            </button>
-          </div>
-          <div class="dropdown-menu" id="dropdown-menu3" role="menu">
-            <div class="dropdown-content">
-              {% for item in tz_list %}
-              <a class="dropdown-item">{{ item }}</a>
-              {% endfor %}
-            </div>
-          </div>
+      <div class="column is-half">
+        <div class="box">
+          <div id="local"></div>
+            <script>
+            function startTime() {
+              let today = new Date();
+              let v = today.toString();
+              document.getElementById('local').innerHTML = v;
+            setTimeout(startTime, 1000);
+            }
+            startTime();
+            </script>
+        </div>
+        <div class="box">
+          <div id="utc"></div>
+            <script>
+            function startTime2() {
+              let todayutc = new Date();
+              let n = todayutc.toUTCString();
+              document.getElementById('utc').innerHTML = n;
+            setTimeout(startTime2, 1000);
+            }
+            startTime2();
+            </script>
         </div>
       </div>
       <div class="column">
