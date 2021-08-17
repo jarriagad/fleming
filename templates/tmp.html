@@ -4,27 +4,16 @@
     <div class="columns">
       <div class="column is-half">
         <div class="box">
-          <div id="local"></div>
-            <script>
-            function startTime() {
-              let today = new Date();
-              let v = today.toString();
-              document.getElementById('local').innerHTML = v;
-            setTimeout(startTime, 1000);
-            }
-            startTime();
-            </script>
-        </div>
-        <div class="box">
+          GMT Time:
           <div id="utc"></div>
             <script>
-            function startTime2() {
-              let todayutc = new Date();
-              let n = todayutc.toUTCString();
-              document.getElementById('utc').innerHTML = n;
-            setTimeout(startTime2, 1000);
+            function getUTCTime() {
+              dt = new Date();
+              utcdt = dt.toUTCString();
+              document.getElementById('utc').innerHTML = utcdt;
+              setTimeout(getUTCTime, 1000);
             }
-            startTime2();
+            getUTCTime();
             </script>
         </div>
       </div>

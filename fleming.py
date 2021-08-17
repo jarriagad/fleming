@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
 from flask import Flask, render_template
 import requests
+import geocoder
 
+g = geocoder.ip('me')
+
+loc = "{0}, {1} {2}".format(g.city, g.state, g.country)
 base_url = "http://worldtimeapi.org/api/timezone"
 r = requests.get(base_url)
 tz_list = r.json()
@@ -11,7 +15,7 @@ app = Flask(__name__)
 #Display index page
 @app.route("/")
 def index():
-  return render_template('tmp.html', tz_list=tz_list)
+  return render_template('tmp.html', g=loc)
 
 @app.route("/about")
 def about():
