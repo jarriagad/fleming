@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fleming</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  </head>
+  <body onload="startTime()">
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        Fleming - simple world timezones
+      </h1>
+      <p class="subtitle">
+        Dashboard displays custom timezone clocks as well as pertinent weather information
+      </p>
+    <div class ="columns">
+      <div class="column">
+      <h3>Local Time:</h3>
+      <div id="txt"></div>
+          <script>
+          function startTime() {
+            const today = new Date();
+            let h = today.getHours();
+            let m = today.getMinutes();
+            let s = today.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
+            setTimeout(startTime, 1000);
+          }
+          function checkTime(i) {
+            if (i < 10) {i = "0" + i};
+            return i;
+          }
+          </script>
+
+      </div>
+    </div>
+    <div class ="columns">
+      <div class="column">
+      <h3>Local Time:</h3>
+      <div id="1txt"></div>
+          <script>
+          function startTime() {
+            const today = new Date();
+            let h = today.getHours();
+            let m = today.getMinutes();
+            let s = today.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('1txt').innerHTML = h + ":" + m + ":" + s;
+            setTimeout(startTime, 1000);
+          }
+          function checkTime(i) {
+            if (i < 10) {i = "0" + i};
+            return i;
+          }
+          </script>
+
+      </div>
+    </div>
+      </div>
+  </section>
+    
+  </body>
