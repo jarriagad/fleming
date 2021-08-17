@@ -1,14 +1,21 @@
 #!/usr/bin/env python3
 from flask import Flask, render_template
+import requests
+
+base_url = "http://worldtimeapi.org/api/timezone"
+r = requests.get(base_url)
+tz_list = r.json()
 
 app = Flask(__name__)
 
 #Display index page
 @app.route("/")
 def index():
-    return render_template('tmp.html')
+  return render_template('tmp.html', tz_list=tz_list)
 
-
+@app.route("/about")
+def about():
+  return render_template('about.html')
 
 
 
@@ -16,4 +23,4 @@ def index():
 
 #Run script
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=80, debug=True)
+  app.run(host='0.0.0.0', port=80, debug=True)
