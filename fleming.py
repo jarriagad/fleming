@@ -15,14 +15,11 @@ app = Flask(__name__)
 #Display index page
 @app.route("/")
 def index():
-  return render_template('tmp.html', g=loc)
+  return render_template('tmp.html', g=loc, city=g.city)
 
 @app.route("/about")
 def about():
-  return render_template('about.html')
-
-
-
+  return render_template('about.html', g=loc)
 
 
 #Run script
