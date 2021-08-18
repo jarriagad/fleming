@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 from flask import Flask, render_template
+from tz_find import getTZList
 import requests
 import geocoder
 
@@ -21,6 +22,9 @@ def index():
 def about():
   return render_template('about.html', g=loc)
 
+@app.route("/tz-list")
+def tz_list():
+  return render_template('tz_list.html', tzl=getTZList(), g=loc)
 
 #Run script
 if __name__ == "__main__":

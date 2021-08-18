@@ -18,10 +18,26 @@
         </div>
       </div>
       <div class="column">
-        <a class="weatherwidget-io" href="https://forecast7.com/en/40d71n74d01/new-york/" data-label_1="Dallas" data-label_2="WEATHER" data-theme="original" >NEW YORK WEATHER</a>
+        <div id="tzzz"></div>
         <script>
-        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+        function getSunURL() {
+          let url = "https://www.timeanddate.com/scripts/sunmap.php?iso=" 
+          dt1 = new Date();
+          yr = dt1.getFullYear();
+          mnth = dt1.getMonth();
+          mnthint = parseInt(mnth) + 1;
+          dy = dt1.getDate();
+          hr = dt1.getHours();
+          mnts = dt1.getMinutes();
+          time =  url + yr + mnthint + dy + "T" + hr + mnts;
+          document.getElementById('tzzz').innerHTML = time;
+          return time;
+        }
+        getSunURL()
         </script>
+        <figure class="image">
+          <img src="https://www.timeanddate.com/scripts/sunmap.php?iso=20210818T1420">
+        </figure>
       </div>
     </div>
   </div>  
