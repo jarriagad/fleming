@@ -25,6 +25,3 @@ def getTZList():
     tz_list.append(tmp_dict)
   
   return tz_list
-
-print(getTZList())
-

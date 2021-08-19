@@ -18,25 +18,27 @@
         </div>
       </div>
       <div class="column">
+      <figure class="image">
         <div id="tzzz"></div>
         <script>
         function getSunURL() {
           let url = "https://www.timeanddate.com/scripts/sunmap.php?iso=" 
           dt1 = new Date();
-          yr = dt1.getFullYear();
-          mnth = dt1.getMonth();
+          yr = dt1.getUTCFullYear();
+          mnth = dt1.getUTCMonth();
           mnthint = parseInt(mnth) + 1;
-          dy = dt1.getDate();
-          hr = dt1.getHours();
-          mnts = dt1.getMinutes();
+          dy = dt1.getUTCDate();
+          hr = dt1.getUTCHours();
+          mnts = dt1.getUTCMinutes();
           time =  url + yr + mnthint + dy + "T" + hr + mnts;
-          document.getElementById('tzzz').innerHTML = time;
-          return time;
+          htmtime = "<img src='" + time + "'>";
+          document.getElementById('tzzz').innerHTML = htmtime;
+          setTimeout(getSunURL, 150000);
         }
         getSunURL()
         </script>
-        <figure class="image">
-          <img src="https://www.timeanddate.com/scripts/sunmap.php?iso=20210818T1420">
+        <img src="/static/flemingo.png"
+      </figure>
         </figure>
       </div>
     </div>
