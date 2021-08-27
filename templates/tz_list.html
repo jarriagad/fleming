@@ -3,10 +3,13 @@
   <div class="container">
     <div class="columns">
       <div class="column">
-        {% for i in tzl %}
-        {{ i }}
-        <div class="block"></div>
-        {% endfor %}
+        <div class="select is-multiple">
+          <select multiple size="15">
+            {% for i in tzl %}
+            <option value="{{ i }}">{{ i }}</option>
+            {% endfor %}
+          </select>
+        </div>
       </div>
     </div>
   </div>  

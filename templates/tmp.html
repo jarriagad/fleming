@@ -16,6 +16,17 @@
             getUTCTime();
             </script>
         </div>
+        <div>
+          <h2>This should be below the box</h2>
+          <div id="test1"></div>
+          <script>
+            function convertTZ(date, tzString) {
+              ttuur = new Date((typeof date === "string" ? new Date(date) : date).toLocaleString("en-US", {timeZone: tzString}));
+              document.getElementById('test1').innerHTML = ttuur;
+            }
+            convertTZ("2012/04/20 10:10:30 +0000", "Asia/Jakarta");
+          </script>
+        </div>
       </div>
       <div class="column">
       <figure class="image">
@@ -33,11 +44,10 @@
           time =  url + yr + mnthint + dy + "T" + hr + mnts;
           htmtime = "<img src='" + time + "'>";
           document.getElementById('tzzz').innerHTML = htmtime;
-          setTimeout(getSunURL, 150000);
+          setTimeout(getSunURL, 20 * 60 * 1000);
         }
         getSunURL()
         </script>
-        <img src="/static/flemingo.png"
       </figure>
         </figure>
       </div>

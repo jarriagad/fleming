@@ -3,6 +3,7 @@
 #Im ripping some website for a list of timezones 
 import requests
 from bs4 import BeautifulSoup
+import geocoder
 
 #Set requests
 url = "https://www.utctime.net/time-zone-abbreviations"
@@ -25,3 +26,9 @@ def getTZList():
     tz_list.append(tmp_dict)
   
   return tz_list
+
+#Dunction that returns location [City, State Country]
+def getLoc():
+  g = geocoder.ip('me')
+  loc = "{0}, {1} {2}".format(g.city, g.state, g.country)
+  return loc
