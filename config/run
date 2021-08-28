@@ -1,0 +1,4 @@
+#!/bin/bash
+
+docker run -dit --rm --name fleming_container -p 8080:80 jarriagada/fleming
+

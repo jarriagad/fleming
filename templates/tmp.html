@@ -8,6 +8,7 @@
           GMT Time:
           <div id="utc"></div>
             <script type="text/javascript" src="/static/app.js">
+            setTimeout(getTime, 1000)
             </script>
         </div>
         <div>
@@ -18,11 +19,8 @@
       </div>
       <!-- Right Side column -->
       <div class="column">
-      <figure class="image">
-        <div id="tzzz"></div>
-        <script type="text/javascript" src="/static/app.js">getSunURL();</script>
-      </figure>
-        </figure>
+            <h6 id="sun_image"></h6>
+          <script type="text/javascript" src="/static/app.js"> window.onload = getSunURL(); </script>
       </div>
     </div>
   </div>  

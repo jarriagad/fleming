@@ -7,9 +7,10 @@ function getUTCTime() {
   return utcdt;
 }
 document.getElementById("utc").innerHTML = getUTCTime();
+setTimeout(getTime, 1000);
 
 // Displays sun position
-function getSunURL() {
+window.onload = function getSunURL() {
   let url = "https://www.timeanddate.com/scripts/sunmap.php?iso=" 
   dt1 = new Date();
   yr = dt1.getUTCFullYear();
@@ -20,16 +21,16 @@ function getSunURL() {
   mnts = dt1.getUTCMinutes();
   time =  url + yr + mnthint + dy + "T" + hr + mnts;
   htmtime = "<img src='" + time + "'>";
-  document.getElementById('tzzz').innerHTML = htmtime;
   setTimeout(getSunURL, 20 * 60 * 1000);
+  document.getElementById('sun_image').innerHTML = htmtime;
 }
 
 // Get machine time
 function getTime() {
   date = new Date();
   htmdate = "<strong>" + date + "</strong>";
-  document.getElementById('loctime').innerHTML = htmdate;
   setTimeout(getTime, 1000);
+  document.getElementById('loctime').innerHTML = htmdate;
 }
 
 // TimeZone converter
