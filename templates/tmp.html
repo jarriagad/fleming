@@ -6,14 +6,7 @@
         <div class="box">
           GMT Time:
           <div id="utc"></div>
-            <script>
-            function getUTCTime() {
-              dt = new Date();
-              utcdt = dt.toUTCString();
-              document.getElementById('utc').innerHTML = utcdt;
-              setTimeout(getUTCTime, 1000);
-            }
-            getUTCTime();
+            <script type="text/javascript" src="/static/app.js">
             </script>
         </div>
         <div>
@@ -31,23 +24,7 @@
       <div class="column">
       <figure class="image">
         <div id="tzzz"></div>
-        <script>
-        function getSunURL() {
-          let url = "https://www.timeanddate.com/scripts/sunmap.php?iso=" 
-          dt1 = new Date();
-          yr = dt1.getUTCFullYear();
-          mnth = dt1.getUTCMonth();
-          mnthint = parseInt(mnth) + 1;
-          dy = dt1.getUTCDate();
-          hr = dt1.getUTCHours();
-          mnts = dt1.getUTCMinutes();
-          time =  url + yr + mnthint + dy + "T" + hr + mnts;
-          htmtime = "<img src='" + time + "'>";
-          document.getElementById('tzzz').innerHTML = htmtime;
-          setTimeout(getSunURL, 20 * 60 * 1000);
-        }
-        getSunURL()
-        </script>
+        <script type="text/javascript" src="/static/app.js">getSunURL();</script>
       </figure>
         </figure>
       </div>
