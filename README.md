@@ -2,7 +2,7 @@
 
 ## I just need a clock
 
-###TODO:
+### TODO:
 
 - Implement for loop to list selected timezones
 - fix date format issues
